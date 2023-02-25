@@ -1,0 +1,43 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Sat Feb 25 20:26:31 2023
+| Host         : nanodcserver running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : report_timing
+| Design       : top_FIFO
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.22 2018-03-21
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack:                    inf
+  Source:                 RP_reg[0]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            FULL
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        8.537ns  (logic 3.325ns (38.950%)  route 5.212ns (61.050%))
+  Logic Levels:           4  (FDCE=1 LUT6=2 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y28          FDCE                         0.000     0.000 r  RP_reg[0]/C
+    SLICE_X0Y28          FDCE (Prop_fdce_C_Q)         0.456     0.456 r  RP_reg[0]/Q
+                         net (fo=137, routed)         2.584     3.040    RP_OBUF[0]
+    SLICE_X1Y31          LUT6 (Prop_lut6_I1_O)        0.124     3.164 r  FULL_OBUF_inst_i_2/O
+                         net (fo=5, routed)           0.527     3.691    FULL_OBUF_inst_i_2_n_0
+    SLICE_X0Y31          LUT6 (Prop_lut6_I0_O)        0.124     3.815 r  FULL_OBUF_inst_i_1/O
+                         net (fo=1, routed)           2.101     5.916    FULL_OBUF
+    D19                  OBUF (Prop_obuf_I_O)         2.621     8.537 r  FULL_OBUF_inst/O
+                         net (fo=0)                   0.000     8.537    FULL
+    D19                                                               r  FULL (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+

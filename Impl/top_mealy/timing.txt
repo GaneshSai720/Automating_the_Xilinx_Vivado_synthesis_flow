@@ -1,0 +1,42 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Sat Feb 25 20:41:06 2023
+| Host         : nanodcserver running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : report_timing
+| Design       : top_mealy
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.22 2018-03-21
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack:                    inf
+  Source:                 w
+                            (input port)
+  Destination:            out
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.930ns  (logic 3.883ns (56.025%)  route 3.048ns (43.975%))
+  Logic Levels:           3  (IBUF=1 LUT3=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    U16                                               0.000     0.000 r  w (IN)
+                         net (fo=0)                   0.000     0.000    w
+    U16                  IBUF (Prop_ibuf_I_O)         0.935     0.935 r  w_IBUF_inst/O
+                         net (fo=3, routed)           1.383     2.318    melay_0011/w_IBUF
+    SLICE_X1Y1           LUT3 (Prop_lut3_I2_O)        0.152     2.470 r  melay_0011/out/O
+                         net (fo=1, routed)           1.664     4.135    out_OBUF
+    V14                  OBUF (Prop_obuf_I_O)         2.796     6.930 r  out_OBUF_inst/O
+                         net (fo=0)                   0.000     6.930    out
+    V14                                                               r  out (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+

@@ -1,0 +1,41 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Sat Feb 25 20:31:04 2023
+| Host         : nanodcserver running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : report_timing
+| Design       : top_traffic_controller
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.22 2018-03-21
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack:                    inf
+  Source:                 div/slowed_clk_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            slowed_clk
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.740ns  (logic 3.223ns (47.823%)  route 3.517ns (52.177%))
+  Logic Levels:           3  (BUFG=1 FDRE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y45         FDRE                         0.000     0.000 r  div/slowed_clk_reg/C
+    SLICE_X34Y45         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  div/slowed_clk_reg/Q
+                         net (fo=2, routed)           0.579     1.097    slowed_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     1.193 r  slowed_clk_OBUF_BUFG_inst/O
+                         net (fo=35, routed)          2.937     4.131    slowed_clk_OBUF_BUFG
+    V16                  OBUF (Prop_obuf_I_O)         2.609     6.740 r  slowed_clk_OBUF_inst/O
+                         net (fo=0)                   0.000     6.740    slowed_clk
+    V16                                                               r  slowed_clk (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
